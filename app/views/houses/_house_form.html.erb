@@ -1,0 +1,13 @@
+<%= form_for @house do |h| %>
+  <%= h.label 'Name' %>
+  <%= h.text_field :name %><br>
+  <%= h.label 'Region' %>
+  <%= h.text_field :region %><br>
+  <%= h.label 'Capital' %>
+  <%= h.text_field :capital %><br>
+  <%= h.label 'Sigil' %>
+  <%= h.text_field :sigil %><br>
+  <%= h.label 'House Words' %>
+  <%= h.text_area :house_words %><br><br>
+  <%= h.submit 'Submit' %>
+  <% end %>

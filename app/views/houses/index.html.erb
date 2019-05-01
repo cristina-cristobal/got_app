@@ -1,0 +1,9 @@
+<h1>A Song of Ice and Fire Compendium</h1>
+<h2>By George R.R. Martin</h2>
+
+<ul><% @houses.each do |house| %>
+  <li><%= link_to house.name, house_path(house) %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Create a New House', new_house_path %>

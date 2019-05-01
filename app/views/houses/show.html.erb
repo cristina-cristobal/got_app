@@ -1,0 +1,14 @@
+<h1>House <%= @house.name%></h1>
+
+<ul>
+  <li>Region: <%= @house.region%></li>
+  <li>Capital: <%= @house.capital %></li>
+  <li>Sigil: <%= @house.sigil %></li>
+  <li>House Words: <%= @house.house_words %></li>
+</ul>
+
+<%= link_to 'Edit House', edit_house_path(@house) %><br>
+<%= link_to 'House List', houses_path %>
+<%= form_tag house_path(@house), method: "delete" do %>
+<%= submit_tag "Destroy House #{@house.name}" %>
+<% end %>
