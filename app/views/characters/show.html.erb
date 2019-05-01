@@ -1,0 +1,14 @@
+<h1><%=@character.name %> Info </h1>
+
+<ul>
+	<li>Role: <%=@character.role %></li><br>
+	<li>Alive?: <%=@character.alive %></li><br>
+	<li>House: <%=@character.house.name %></li><br>
+</ul>
+
+<%= form_tag character_path(@character), method:"delete" do %>
+	<%= submit_tag "Destroy #{@character.name}" %>
+<% end %>
+
+<%=link_to "Character List", characters_path %><br>
+<%=link_to "Edit #{@character.name}", edit_character_path(@character) %>

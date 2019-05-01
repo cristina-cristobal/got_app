@@ -1,6 +1,6 @@
 <h1>Edit House <%= @house.name %></h1>
 
-<%= render partial: "house_errors", locals: {new_thing: @house} %>
+<%= render partial: "shared/errors", locals: {new_thing: @house} %>
 
 <%= render "house_form" %>
 

@@ -1,0 +1,6 @@
+<h1>Create a Character</h1>
+
+<%= render partial: "shared/errors", locals: {new_thing: @character} %>
+<%= render "character_form" %>
+
+<%= link_to "Return to Character List", characters_path %>

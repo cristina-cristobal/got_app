@@ -10,7 +10,7 @@ class HousesController < ApplicationController
 
   def create
     @house = House.create(house_params)
-    if @house.errors
+    if !@house.errors.empty?
       render :new
     else
       redirect_to house_path(@house)
@@ -28,7 +28,7 @@ class HousesController < ApplicationController
   def update
     @house = House.find(params[:id])
     @house.update(house_params)
-    if @house.errors
+    if !@house.errors.empty?
       render :edit
     else
       redirect_to house_path(@house)

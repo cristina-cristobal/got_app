@@ -1,6 +1,6 @@
 <h1>Add House</h1>
 
-<%= render partial: "house_errors", locals: {new_thing: @house} %>
+<%= render partial: "shared/errors", locals: {new_thing: @house} %>
 <%= render "house_form" %>
 
     <%= link_to 'Go Back to House List', houses_path %>

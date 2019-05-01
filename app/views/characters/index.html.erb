@@ -1,0 +1,9 @@
+<h1>ALL THE CHARACTERS!!!!!</h1>
+
+<ul>
+<% @characters.each do |character| %>
+	<li><%= link_to character.name, character_path(character) %></li>
+<% end %>
+</ul>
+
+<%=link_to "Create a Character", new_character_path %>

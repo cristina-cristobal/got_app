@@ -1,0 +1,11 @@
+<%= form_for @character do |f| %>
+	<%= f.label "Name" %>
+	<%= f.text_field :name %><br>
+	<%= f.label "Role" %>
+	<%= f.text_field :role %><br>
+	<%= f.label "Alive?" %>
+	<%= f.select :alive, [['Yes', true], ['No', false]] %><br>
+	<%= f.label "House" %>
+	<%= f.collection_select :house_id, House.all, :id, :name %><br>
+	<%= f.submit "Submit" %><br>
+<% end %>

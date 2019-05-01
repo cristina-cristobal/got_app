@@ -9,6 +9,7 @@
 
 <%= link_to 'Edit House', edit_house_path(@house) %><br>
 <%= link_to 'House List', houses_path %>
+<%-#delete a character -%>
 <%= form_tag house_path(@house), method: "delete" do %>
 <%= submit_tag "Destroy House #{@house.name}" %>
 <% end %>
