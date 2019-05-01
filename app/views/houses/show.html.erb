@@ -7,9 +7,37 @@
   <li>House Words: <%= @house.house_words %></li>
 </ul>
 
+<h2>Associated Characters</h2>
+
+<ul>
+	<% if @house.characters.empty? %>
+		No Characters Exist
+	<% else %>
+	<% @house.characters.each do |character| %>
+		<li><%= link_to character.name, character_path(character) %></li>
+	<% end %>
+	<% end %>
+</ul><br>
+
+<h2>Add a Character</h2>
+	<%= form_for @character do |c| %>
+		<%= c.label "Character Name" %>
+		<%= c.text_field :name %><br>
+		<%= c.label "Character Role" %>
+		<%= c.text_field :role %><br>
+		<%= c.label "Alive?" %>
+		<%= c.select :alive, [['Yes', true], ['No', false]] %><br>
+		<%= c.label "Tier" %>
+		<%= c.select :tier, (1..3) %><br>
+		<%= c.hidden_field :house_id, value: @house.id %>
+	<%= c.submit "Create Character" %>
+<% end %><br>
+
+
 <%= link_to 'Edit House', edit_house_path(@house) %><br>
 <%= link_to 'House List', houses_path %>
 <%-#delete a character -%>
 <%= form_tag house_path(@house), method: "delete" do %>
+<br>
 <%= submit_tag "Destroy House #{@house.name}" %>
 <% end %>

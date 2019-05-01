@@ -6,10 +6,12 @@ class HousesController < ApplicationController
 
   def new
     @house = House.new
+
   end
 
   def create
     @house = House.create(house_params)
+    @character = Character.create()
     if !@house.errors.empty?
       render :new
     else
@@ -19,6 +21,7 @@ class HousesController < ApplicationController
 
   def show
     @house = House.find(params[:id])
+    @character = Character.new
   end
 
   def edit

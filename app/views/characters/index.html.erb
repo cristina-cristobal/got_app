@@ -1,9 +1,15 @@
 <h1>ALL THE CHARACTERS!!!!!</h1>
 
 <ul>
-<% @characters.each do |character| %>
-	<li><%= link_to character.name, character_path(character) %></li>
+<% @houses.each do |house| %>
+	<li><%= link_to house.name, house_path(house) %></li>
+	<ul>
+	<% house.characters.each do |character| %>
+		<li><%= link_to character.name, character_path(character) %></li>
+	<% end %>
+	</ul>
 <% end %>
 </ul>
 
-<%=link_to "Create a Character", new_character_path %>
+<%=link_to "Create a Character", new_character_path %><br>
+<%=link_to "Houses", houses_path %>

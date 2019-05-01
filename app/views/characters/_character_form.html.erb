@@ -5,6 +5,8 @@
 	<%= f.text_field :role %><br>
 	<%= f.label "Alive?" %>
 	<%= f.select :alive, [['Yes', true], ['No', false]] %><br>
+	<%= f.label "Tier" %>
+	<%= f.select :tier, (1..3) %><br>
 	<%= f.label "House" %>
 	<%= f.collection_select :house_id, House.all, :id, :name %><br>
 	<%= f.submit "Submit" %><br>

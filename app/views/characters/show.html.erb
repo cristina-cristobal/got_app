@@ -3,11 +3,12 @@
 <ul>
 	<li>Role: <%=@character.role %></li><br>
 	<li>Alive?: <%=@character.alive %></li><br>
-	<li>House: <%=@character.house.name %></li><br>
+	<li>Tier: <%=@character.tier %></li><br>
+	<li>House: <%=link_to @character.house.name, house_path(@character.house) %></li><br>
 </ul>
 
 <%= form_tag character_path(@character), method:"delete" do %>
-	<%= submit_tag "Destroy #{@character.name}" %>
+	<%= submit_tag "Kill #{@character.name}" %>
 <% end %>
 
 <%=link_to "Character List", characters_path %><br>
